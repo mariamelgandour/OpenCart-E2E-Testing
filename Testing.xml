@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OpenCart Automation Suite">
+
+    <test name="Regression Tests">
+        <classes>
+            <class name="Tests.Currency.AppearanceOfCurrencySymbol"/>
+            <class name="Tests.Currency.CurrencyClickableTest"/>
+            <class name="Tests.Currency.CurrencyHoverTest"/>
+            <class name="Tests.Hover.BreadcrumbTest"/>
+            <class name="Tests.Hover.HoverEffectTest"/>
+            <class name="Tests.Hover.MainCategoryNavigationTest"/>
+        </classes>
+    </test>
+
+</suite>
