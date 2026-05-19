@@ -80,6 +80,15 @@ public class BaseTest {
                 e.printStackTrace();
             }
         }
+
+    }
+    // ⭐ الدالة المساعدة الجديدة للانتظار بالثواني عشان المستخدم يتابع الخطوات
+    public void waitSeconds(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000); // بنضرب في 1000 لأن الـ sleep بيقرا بالملي ثانية
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

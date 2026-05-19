@@ -7,12 +7,6 @@
             <class name="Tests.Currency.AppearanceOfCurrencySymbol"/>
             <class name="Tests.Currency.CurrencyClickableTest"/>
             <class name="Tests.Currency.CurrencyHoverTest"/>
-            <class name="Tests.Hover.BreadcrumbTest"/>
-            <class name="Tests.Hover.HoverEffectTest"/>
-            <class name="Tests.Hover.MainCategoryNavigationTest"/>
-            <class name="Tests.WishList.WishlistClickable"/>
-            <class name="Tests.WishList.WishlistDeleteTest"/>
-            <class name="Tests.WishList.WishlistNavigationTest"/>
         </classes>
     </test>
 
