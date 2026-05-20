@@ -15,11 +15,7 @@ public class WishlistPage {
     private By emailField = By.xpath("//*[@id=\"input-email\"]");
     private By passwordField = By.xpath("//*[@id=\"input-password\"]");
     private By loginButton = By.xpath("//*[@id=\"content\"]/div/div[2]/div/form/input[1]");
-
-    // XPath مرن لأول زرار حذف في الجدول مهما كان المنتج
     private By deleteBtn = By.xpath("//div[@id='content']//table/tbody/tr[1]/td[6]/a");
-
-    // XPath
     private By productImgLink = By.xpath("//div[@id='content']//table/tbody/tr[1]/td[1]/a/img");
 
     public WishlistPage(WebDriver driver, BaseTest baseTest) {
@@ -30,7 +26,7 @@ public class WishlistPage {
     // 2. Actions
     public void clickWishlistHeader() {
         driver.findElement(wishlistHeaderBtn).click();
-        System.out.println("تم الضغط على الـ Wishlist والانتقال لصفحة الـ Login...");
+        System.out.println("Wishlist Clicked and Move to Login Page");
         baseTest.waitSeconds(2);
     }
 
@@ -38,19 +34,19 @@ public class WishlistPage {
         driver.findElement(emailField).sendKeys(email);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(loginButton).click();
-        System.out.println("تم كتابة البيانات والضغط على Login...");
+        System.out.println("Fields are Filled With Data and Press on Login Button");
         baseTest.waitSeconds(2);
     }
 
     public void clickDeleteButton() {
         driver.findElement(deleteBtn).click();
-        System.out.println("تم الضغط على زرار الحذف (X) لأول منتج متاح...");
+        System.out.println("Clickable are Done in X  Button to First Product");
         baseTest.waitSeconds(2);
     }
 
     public void clickProductImage() {
         driver.findElement(productImgLink).click();
-        System.out.println("تم الضغط على صورة أول منتج متاح للانتقال لصفحة التفاصيل...");
+        System.out.println("Image Are Clicked To Move to Details Product Page ");
         baseTest.waitSeconds(2);
     }
     public void scrollAndClickProduct() {
@@ -60,9 +56,10 @@ public class WishlistPage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", link);
         baseTest.waitSeconds(1);
 
-        System.out.println(">> جاري الضغط الآن على المنتج رقم 16 في القائمة...");
+        System.out.println("Clickable on Product no 16 on List");
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", link);
 
-        System.out.println("✅ تم تنفيذ أمر الضغط بنجاح على المنتج.");
+        System.out.println("Clickable On Product Done Successfully");
+
     }
 }

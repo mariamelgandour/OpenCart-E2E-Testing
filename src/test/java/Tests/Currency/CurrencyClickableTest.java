@@ -10,17 +10,12 @@ public class CurrencyClickableTest extends BaseTest {
     public void verifyCurrencyDropdownIsClickable() {
 
         CurrencyPage currencyPage = new CurrencyPage(driver);
-
-        // Step 1: Click dropdown (Act)
         currencyPage.selectCurrency("Euro");
-
-        // Step 2: Validate UI response (Assert 1)
         Assert.assertTrue(
                 currencyPage.getCurrencySymbol().contains("€"),
                 "Currency symbol should be Euro"
         );
 
-        // Step 3: Validate price updated (Assert 2)
         Assert.assertTrue(
                 currencyPage.getFirstProductPrice().contains("€"),
                 "Product price should update to Euro"

@@ -1,7 +1,9 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,17 +14,14 @@ public class CurrencyPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-
-
     private By currencyDropdown =
             By.xpath("//button[contains(@class,'dropdown-toggle')]");
-
     private By currencySymbol =
             By.xpath("//button[contains(@class,'dropdown-toggle')]//strong");
-
     private By firstProductPrice =
             By.xpath("(//span[contains(@class,'price-new')])[1]");
-
+    By dollarOption = By.xpath("//*[@id=\"form-currency\"]/div/ul/li[3]/button");
+    By productPrice = By.xpath("...");
     // Constructor
     public CurrencyPage(WebDriver driver) {
         this.driver = driver;
@@ -80,4 +79,10 @@ public class CurrencyPage {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+    public void changeCurrencyToDollar() {
+        driver.findElement(currencyDropdown).click();
+        driver.findElement(dollarOption).click();
+    }
+
+
 }

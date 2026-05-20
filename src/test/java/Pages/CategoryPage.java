@@ -98,10 +98,10 @@ public class CategoryPage {
                 .pause(Duration.ofMillis(300))
                 .perform();
 
-        // 2. Extra JS blur (important for sticky hover menus)
+
         js.executeScript("document.activeElement.blur();");
 
-        // 3. small wait
+
         try {
             Thread.sleep(500);
         } catch (Exception e) {}

@@ -7,6 +7,7 @@
             <class name="Tests.Currency.AppearanceOfCurrencySymbol"/>
             <class name="Tests.Currency.CurrencyClickableTest"/>
             <class name="Tests.Currency.CurrencyHoverTest"/>
+            <class name="Tests.Currency.ProductCurrencyTest"/>
             <class name="Tests.Hover.BreadcrumbTest"/>
             <class name="Tests.Hover.HoverEffectTest"/>
             <class name="Tests.Hover.MainCategoryNavigationTest"/>

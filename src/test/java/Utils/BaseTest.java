@@ -1,5 +1,4 @@
 package Utils;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -82,10 +81,10 @@ public class BaseTest {
         }
 
     }
-    // ⭐ الدالة المساعدة الجديدة للانتظار بالثواني عشان المستخدم يتابع الخطوات
+
     public void waitSeconds(int seconds) {
         try {
-            Thread.sleep(seconds * 1000); // بنضرب في 1000 لأن الـ sleep بيقرا بالملي ثانية
+            Thread.sleep(seconds * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

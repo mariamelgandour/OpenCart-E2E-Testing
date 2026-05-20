@@ -21,17 +21,17 @@ public class WishlistClickable extends BaseTest {
         WebElement wishlistBtn = wait.until(ExpectedConditions.elementToBeClickable(wishlistLocator));
 
 
-        Assert.assertTrue(wishlistBtn.isDisplayed(), " الزرار غير مرئي!");
+        Assert.assertTrue(wishlistBtn.isDisplayed(), "Button UnVisible");
         wishlistBtn.click();
-        System.out.println(">> تم الضغط على زرار الـ Wishlist بنجاح.");
+        System.out.println("Clickable On WishList Done Successfully");
 
         wait.until(ExpectedConditions.or(
                 ExpectedConditions.urlContains("route=account/wishlist"),
                 ExpectedConditions.urlContains("route=account/login")
         ));
    String currentUrl = driver.getCurrentUrl();
-        System.out.println(" نجاح: تم الانتقال بنجاح إلى: " + currentUrl);
+        System.out.println("Movement Done Successfully" + currentUrl);
         Assert.assertTrue(currentUrl.contains("wishlist") || currentUrl.contains("login"),
-                " لم يتم الانتقال لصفحة الـ Wishlist أو الـ Login!");
+                "Don't Move To Wishlist");
     }
 }
