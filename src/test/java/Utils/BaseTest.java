@@ -36,6 +36,7 @@ public class BaseTest {
 
 
         extent.setSystemInfo("Tester", "Mariam Elgandour");
+        extent.setSystemInfo("Tester", "Mohamed Ahmed");
         extent.setSystemInfo("Environment", "QC");
     }
 
