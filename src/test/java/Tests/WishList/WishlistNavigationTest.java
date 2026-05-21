@@ -3,6 +3,7 @@ package Tests.WishList;
 import Utils.BaseTest;
 import Pages.WishlistPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,25 +18,21 @@ public class WishlistNavigationTest extends BaseTest {
         WishlistPage wishlistPage = new WishlistPage(driver, this);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-
         wishlistPage.clickWishlistHeader();
         wishlistPage.login("mariamelgandour9@gmail.com", "Mariam1552023@");
 
-
         wait.until(ExpectedConditions.urlContains("wishlist"));
-
 
         By tableLocator = By.xpath("//div[@id='content']//table");
 
         if (!driver.findElements(tableLocator).isEmpty()) {
-            System.out.println("Product table exists, accessing the last product");
-            System.out.println("Waiting for 5 seconds so you can see the click action");
-            Thread.sleep(1000);
-            wishlistPage.scrollAndClickProduct();
+            System.out.println("Product table exists, accessing the product");
 
+            WebElement productLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//table[@class='table table-bordered table-hover']//tbody//tr[1]//td[2]/a")));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", productLink);
+            productLink.click();
 
-
-            System.out.println("Click performed! Waiting for another 5 seconds so you can see the product page before closing...");
+            System.out.println("Click performed! Waiting for 3 seconds to confirm navigation...");
             Thread.sleep(3000);
             String currentUrl = driver.getCurrentUrl();
             System.out.println("Current URL Is " + currentUrl);
@@ -45,7 +42,6 @@ public class WishlistNavigationTest extends BaseTest {
             } else {
                 System.out.println("Warning: We are still on the Wishlist page or a different page!");
             }
-
 
             WebElement cartBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("button-cart")));
             Assert.assertTrue(cartBtn.isDisplayed(), "Movement To Product Details Failed");

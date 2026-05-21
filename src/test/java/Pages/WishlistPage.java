@@ -49,17 +49,11 @@ public class WishlistPage {
         System.out.println("Image Are Clicked To Move to Details Product Page ");
         baseTest.waitSeconds(2);
     }
+
     public void scrollAndClickProduct() {
-        String xpathToLink = "//*[@id='content']/div[1]/table/tbody/tr[16]/td[1]/a";
-        WebElement link = driver.findElement(By.xpath(xpathToLink));
 
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", link);
-        baseTest.waitSeconds(1);
-
-        System.out.println("Clickable on Product no 16 on List");
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", link);
-
-        System.out.println("Clickable On Product Done Successfully");
-
+        WebElement productLink = driver.findElement(By.xpath("//table[@class='table table-bordered table-hover']//tbody//tr[1]//td[2]/a"));
+        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", productLink);
+        productLink.click();
     }
 }
