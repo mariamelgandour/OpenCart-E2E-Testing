@@ -1,0 +1,1177 @@
+{
+  "info": {
+    "_postman_id": "54d80538-91b9-4b20-a894-268b0d7c957a",
+    "name": "OpenCart API",
+    "description": "Complete API test collection for OpenCart. Auto-captures api_token after login and injects it into all subsequent requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32776519"
+  },
+  "item": [
+    {
+      "name": "Module 1 — Authentication",
+      "item": [
+        {
+          "name": "TC-001 Login — valid credentials",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-001 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-001 | Has api_token', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('api_token');",
+                  "  pm.environment.set('api_token', j.api_token);",
+                  "  console.log('Token saved:', j.api_token);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "{{api_username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "key",
+                  "value": "{{api_key}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/login"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-002 Login — invalid API key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-002 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-002 | Returns incorrect key error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('error');",
+                  "  pm.expect(j.error).to.include('Incorrect');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "Default",
+                  "type": "text"
+                },
+                {
+                  "key": "key",
+                  "value": "INVALIDKEY123",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/login"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Module 2 — Cart",
+      "item": [
+        {
+          "name": "TC-004 Cart — add product successfully",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-004 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-004 | Returns success message', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('success');",
+                  "  pm.expect(j.success).to.include('modified your shopping cart');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "product_id",
+                  "value": "{{product_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "quantity",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/add&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/add"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-005 Cart — add invalid product_id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('TC-005 | Status 200', () => pm.response.to.have.status(200));",
+                  "",
+                  "pm.test('TC-005 | Returns product not found error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('error');",
+                  "  pm.expect(j.error).to.have.property('store');",
+                  "  pm.expect(j.error.store).to.include('Product');",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "product_id",
+                  "value": "99999",
+                  "type": "text"
+                },
+                {
+                  "key": "quantity",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/add&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/add"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-006 Cart — add product without quantity",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-006 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-006 | Returns quantity error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('error');",
+                  "  pm.expect(j.error).to.include('Quantity');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "product_id",
+                  "value": "{{product_id}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/add&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/add"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-007 Cart — retrieve cart with products",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-007 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-007 | Has products array', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('products');",
+                  "  pm.expect(j.products).to.be.an('array').and.have.length.above(0);",
+                  "  pm.environment.set('cart_id', j.products[0].cart_id);",
+                  "  console.log('cart_id saved:', j.products[0].cart_id);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/products&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/products"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-008 Cart — retrieve empty cart",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-008 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-008 | Products array is empty', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('products');",
+                  "  pm.expect(j.products).to.be.an('array').that.is.empty;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/products&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/products"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-009 Cart — edit product quantity",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-009 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-009 | Returns success message', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('success');",
+                  "  pm.expect(j.success).to.include('modified your shopping cart');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "key",
+                  "value": "{{cart_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "quantity",
+                  "value": "3",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/edit&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/edit"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-010 Cart — edit without key field",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-010 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-010 | Returns missing key error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('error');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "quantity",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/edit&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/edit"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-011 Cart — remove product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-011 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-011 | Returns success message', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('success');",
+                  "  pm.expect(j.success).to.include('modified your shopping cart');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "key",
+                  "value": "{{cart_id}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/remove&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/remove"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Module 3 — Customer",
+      "item": [
+        {
+          "name": "TC-012 Customer — add customer details",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-012 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-012 | Returns success message', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('success');",
+                  "  pm.expect(j.success).to.include('modified customers');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "firstname",
+                  "value": "John",
+                  "type": "text"
+                },
+                {
+                  "key": "lastname",
+                  "value": "Doe",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "john.doe@test.com",
+                  "type": "text"
+                },
+                {
+                  "key": "telephone",
+                  "value": "01000000000",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/customer&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/customer"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-013 Customer — add without email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('TC-013 | Status 200', () => pm.response.to.have.status(200));",
+                  "",
+                  "pm.test('TC-013 | Returns email required error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j.error).to.have.property('email');",
+                  "  pm.expect(j.error.email).to.include('E-Mail');",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "firstname",
+                  "value": "John",
+                  "type": "text"
+                },
+                {
+                  "key": "lastname",
+                  "value": "Doe",
+                  "type": "text"
+                },
+                {
+                  "key": "telephone",
+                  "value": "01000000000",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/customer&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/customer"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Module 4 — Order",
+      "item": [
+        {
+          "name": "TC-014 Order — place order with all details",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const base   = pm.environment.get('base_url');",
+                  "const token  = pm.environment.get('api_token');",
+                  "const prodId = pm.environment.get('product_id');",
+                  "const h = { 'Content-Type': 'application/x-www-form-urlencoded' };",
+                  "const t = '&api_token=' + token;",
+                  "pm.sendRequest({ url: base+'/index.php?route=api/cart/add'+t, method:'POST', header:h,",
+                  "  body:{ mode:'urlencoded', urlencoded:[{key:'product_id',value:prodId},{key:'quantity',value:'1'}]}",
+                  "}, (e,r) => console.log('Cart add:', r.json()));",
+                  "pm.sendRequest({ url: base+'/index.php?route=api/customer'+t, method:'POST', header:h,",
+                  "  body:{ mode:'urlencoded', urlencoded:[{key:'firstname',value:'John'},{key:'lastname',value:'Doe'},{key:'email',value:'john.doe@test.com'},{key:'telephone',value:'01000000000'}]}",
+                  "}, (e,r) => console.log('Customer:', r.json()));",
+                  "pm.sendRequest({ url: base+'/index.php?route=api/shipping/address'+t, method:'POST', header:h,",
+                  "  body:{ mode:'urlencoded', urlencoded:[{key:'firstname',value:'John'},{key:'lastname',value:'Doe'},{key:'address_1',value:'123 Test Street'},{key:'city',value:'Cairo'},{key:'postcode',value:'12345'},{key:'country_id',value:'222'},{key:'zone_id',value:'3563'}]}",
+                  "}, (e,r) => console.log('Shipping address:', r.json()));",
+                  "pm.sendRequest({ url: base+'/index.php?route=api/shipping/method'+t, method:'POST', header:h,",
+                  "  body:{ mode:'urlencoded', urlencoded:[{key:'shipping_method',value:'flat.flat'}]}",
+                  "}, (e,r) => console.log('Shipping method:', r.json()));",
+                  "pm.sendRequest({ url: base+'/index.php?route=api/payment/address'+t, method:'POST', header:h,",
+                  "  body:{ mode:'urlencoded', urlencoded:[{key:'firstname',value:'John'},{key:'lastname',value:'Doe'},{key:'address_1',value:'123 Test Street'},{key:'city',value:'Cairo'},{key:'postcode',value:'12345'},{key:'country_id',value:'222'},{key:'zone_id',value:'3563'}]}",
+                  "}, (e,r) => console.log('Payment address:', r.json()));",
+                  "pm.sendRequest({ url: base+'/index.php?route=api/payment/method'+t, method:'POST', header:h,",
+                  "  body:{ mode:'urlencoded', urlencoded:[{key:'payment_method',value:'cod'}]}",
+                  "}, (e,r) => console.log('Payment method:', r.json()));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-014 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-014 | Returns order_id', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('order_id');",
+                  "  pm.environment.set('order_id', j.order_id);",
+                  "  console.log('order_id saved:', j.order_id);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/order/add&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/order/add"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-015 Order — place with empty cart",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('TC-015 | Status 200', () => pm.response.to.have.status(200));",
+                  "",
+                  "pm.test('TC-015 | Returns shipping method error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('error');",
+                  "  pm.expect(j.error).to.include('Shipping');",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/order/add&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/order/add"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Module 5 — Token Validation",
+      "item": [
+        {
+          "name": "TC-016 Token — request without api_token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('TC-016 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-016 | Returns permission error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j.error).to.have.property('warning');",
+                  "  pm.expect(j.error.warning).to.include('permission');",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/products"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-017 Token — request with invalid api_token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('TC-017 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-017 | Returns permission error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j.error).to.have.property('warning');",
+                  "  pm.expect(j.error.warning).to.include('permission');",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/cart/products&api_token=abc123invalid",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/cart/products"
+                },
+                {
+                  "key": "api_token",
+                  "value": "abc123invalid"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-018 Token — change currency with valid token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-018 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-018 | Returns currency changed success', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('success');",
+                  "  pm.expect(j.success).to.include('currency');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "currency",
+                  "value": "USD",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/currency&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/currency"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC-019 Token — change currency without api_token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('TC-019 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-019 | Returns permission error', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('error');",
+                  "  pm.expect(j.error).to.include('permission');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "currency",
+                  "value": "USD",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/currency",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/currency"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Module 6 — Shipping",
+      "item": [
+        {
+          "name": "TC-020 Shipping — set shipping address",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const base  = pm.environment.get('base_url');\r",
+                  "const token = pm.environment.get('api_token');\r",
+                  "const t     = '&api_token=' + token;\r",
+                  "const h     = { 'Content-Type': 'application/x-www-form-urlencoded' };\r",
+                  "\r",
+                  "pm.sendRequest({\r",
+                  "  url: base + '/index.php?route=api/cart/add' + t,\r",
+                  "  method: 'POST',\r",
+                  "  header: h,\r",
+                  "  body: {\r",
+                  "    mode: 'urlencoded',\r",
+                  "    urlencoded: [\r",
+                  "      { key: 'product_id', value: '48' },\r",
+                  "      { key: 'quantity',   value: '1'  }\r",
+                  "    ]\r",
+                  "  }\r",
+                  "}, (err, res) => {\r",
+                  "  console.log('Cart add before shipping:', res.json());\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('TC-020 | Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('TC-020 | Returns shipping address success', () => {",
+                  "  const j = pm.response.json();",
+                  "  pm.expect(j).to.have.property('success');",
+                  "  pm.expect(j.success).to.include('Shipping address');",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "firstname",
+                  "value": "John",
+                  "type": "text"
+                },
+                {
+                  "key": "lastname",
+                  "value": "Doe",
+                  "type": "text"
+                },
+                {
+                  "key": "address_1",
+                  "value": "123 Test Street",
+                  "type": "text"
+                },
+                {
+                  "key": "city",
+                  "value": "Cairo",
+                  "type": "text"
+                },
+                {
+                  "key": "postcode",
+                  "value": "12345",
+                  "type": "text"
+                },
+                {
+                  "key": "country_id",
+                  "value": "222",
+                  "type": "text"
+                },
+                {
+                  "key": "zone_id",
+                  "value": "3563",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/index.php?route=api/shipping/address&api_token={{api_token}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "api/shipping/address"
+                },
+                {
+                  "key": "api_token",
+                  "value": "{{api_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "const requestName = pm.info.requestName;",
+          "if (requestName === 'TC-001 Login — valid credentials') { return; }",
+          "const token = pm.environment.get('api_token');",
+          "if (!token || token === '') {",
+          "  const baseUrl  = pm.environment.get('base_url');",
+          "  const username = pm.environment.get('api_username');",
+          "  const apiKey   = pm.environment.get('api_key');",
+          "  pm.sendRequest({",
+          "    url: baseUrl + '/index.php?route=api/login',",
+          "    method: 'POST',",
+          "    header: { 'Content-Type': 'application/x-www-form-urlencoded' },",
+          "    body: {",
+          "      mode: 'urlencoded',",
+          "      urlencoded: [",
+          "        { key: 'username', value: username },",
+          "        { key: 'key',      value: apiKey }",
+          "      ]",
+          "    }",
+          "  }, function (err, res) {",
+          "    if (!err) {",
+          "      const json = res.json();",
+          "      if (json.api_token) {",
+          "        pm.environment.set('api_token', json.api_token);",
+          "        console.log('Auto-login OK. Token saved.');",
+          "      }",
+          "    }",
+          "  });",
+          "}"
+        ]
+      }
+    }
+  ]
+}

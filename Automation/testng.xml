@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OpenCart E2E Suite" verbose="1">
+
+
+    <test name="Component - Account - Registration">
+        <classes>
+            <class name="component.account.RegisterTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Account - Login">
+        <classes>
+            <class name="component.account.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Account - Forgot Password">
+        <classes>
+            <class name="component.account.ForgotPasswordTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Header - Currency">
+        <classes>
+            <class name="component.header.CurrencyTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Header - Navigation Hover">
+        <classes>
+            <class name="component.header.NavigationHoverTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Header - Search">
+        <classes>
+            <class name="component.header.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Catalog - Navigation">
+        <classes>
+            <class name="component.catalog.NavigationTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Catalog - Product Comparison">
+        <classes>
+            <class name="component.catalog.ComparisonTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Cart - Cart Operations">
+        <classes>
+            <class name="component.cart.CartTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Wishlist - Wishlist Operations">
+        <classes>
+            <class name="component.wishlist.WishlistTest"/>
+        </classes>
+    </test>
+
+    <test name="Component - Checkout - Order Placement">
+        <classes>
+            <class name="component.checkout.CheckoutTest"/>
+        </classes>
+    </test>
+
+    <test name="Integration - Register Then Login">
+        <classes>
+            <class name="integration.RegisterThenLoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Integration - Login Then Search Then Add To Cart">
+        <classes>
+            <class name="integration.LoginThenSearchThenAddToCartTest"/>
+        </classes>
+    </test>
+
+
+
+    <test name="Integration - Search Then Compare Products">
+        <classes>
+            <class name="integration.SearchThenCompareProductsTest"/>
+        </classes>
+    </test>
+
+    <test name="Integration - Login Then Add To Cart Then Checkout">
+        <classes>
+            <class name="integration.LoginThenAddToCartThenCheckoutTest"/>
+        </classes>
+    </test>
+
+    <test name="Integration - Currency Switch Then Verify Product Price">
+        <classes>
+            <class name="integration.CurrencySwitchThenVerifyProductPriceTest"/>
+        </classes>
+    </test>
+
+    <test name="Integration - Login Then Wishlist Then View Product">
+        <classes>
+            <class name="integration.LoginThenWishlistThenViewProductTest"/>
+        </classes>
+    </test>
+
+
+    <test name="E2E - Full Shopping Journey">
+        <classes>
+            <class name="e2e.ComprehensiveE2ETest"/>
+        </classes>
+    </test>
+
+</suite>

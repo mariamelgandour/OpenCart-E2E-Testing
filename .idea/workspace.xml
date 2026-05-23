@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="140d1e2c-d27e-4b2e-abc5-db42a4717c29" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3E4KTnnISwk7pkcN3xhtZwanIlW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TestNG.C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing/Automation/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CheckoutTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CheckoutTest.testSuccessfulOrderPlacementAsGuest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ComprehensiveE2ETest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ComprehensiveE2ETest.testComprehensiveOpenCartJourney.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ForgotPasswordTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ForgotPasswordTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ForgotPasswordTest.testForgotPasswordWithRegisteredEmail.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.FullShoppingJourneyTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.testLoginWithValidCredentials.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginThenSearchThenAddToCartTest.testLoginThenSearchThenAddToCart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RegisterThenLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
+  <component name="RunManager" selected="TestNG.ComprehensiveE2ETest.testComprehensiveOpenCartJourney">
+    <configuration name="C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing/Automation/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OpenCart" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/Automation/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComprehensiveE2ETest.testComprehensiveOpenCartJourney" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OpenCart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e2e.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e2e" />
+      <option name="MAIN_CLASS_NAME" value="e2e.ComprehensiveE2ETest" />
+      <option name="METHOD_NAME" value="testComprehensiveOpenCartJourney" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OpenCart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="component.account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="component.account" />
+      <option name="MAIN_CLASS_NAME" value="component.account.LoginTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginThenSearchThenAddToCartTest.testLoginThenSearchThenAddToCart" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OpenCart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.LoginThenSearchThenAddToCartTest" />
+      <option name="METHOD_NAME" value="testLoginThenSearchThenAddToCart" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterThenLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OpenCart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.RegisterThenLoginTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.ComprehensiveE2ETest.testComprehensiveOpenCartJourney" />
+        <item itemvalue="TestNG.C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing/Automation/testng.xml" />
+        <item itemvalue="TestNG.RegisterThenLoginTest" />
+        <item itemvalue="TestNG.LoginThenSearchThenAddToCartTest.testLoginThenSearchThenAddToCart" />
+        <item itemvalue="TestNG.LoginTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="140d1e2c-d27e-4b2e-abc5-db42a4717c29" name="Changes" comment="" />
+      <created>1779432417517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779432417517</updated>
+    </task>
+    <servers />
+  </component>
+</project>
