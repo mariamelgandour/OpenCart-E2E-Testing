@@ -10,6 +10,14 @@
 
 ---
 
+## ☁️ Project Drive
+
+📁 **[View All Project Artifacts on Google Drive](https://drive.google.com/drive/folders/1ug7ITtV8Dn9s4WlnjtPvT_0yCogAPTXW?usp=sharing)**
+
+> Contains manual test documents, bug evidence screenshots, user stories, API documentation, and execution reports.
+
+---
+
 ## 📋 Table of Contents
 
 - [Project Overview](#-project-overview)
@@ -32,11 +40,11 @@
 
 This repository is a **full-spectrum QA project** targeting the OpenCart e-commerce platform. It covers the complete testing lifecycle — from test planning and manual test case execution to automated UI regression and REST API validation.
 
-| Layer | Scope | Tooling |
-|---|---|---|
-| **Manual** | Test Plan · Test Cases · Bug Reports · User Stories | Excel / PDF |
-| **UI Automation** | Component · Integration · End-to-End | Java · Selenium · TestNG |
-| **API** | REST endpoint validation · Postman collections | Postman · Excel reports |
+| Layer          | Scope | Tooling |
+|----------------|---|---|
+| **Manual**     | Test Plan · Test Cases · Bug Reports · User Stories | Excel / PDF |
+| **Automation** | Component · Integration · End-to-End | Java · Selenium · TestNG |
+| **API**        | REST endpoint validation · Postman collections | Postman · Excel reports |
 
 **Target Application:** `https://awesomeqa.com/ui/index.php?route=common/home`
 
