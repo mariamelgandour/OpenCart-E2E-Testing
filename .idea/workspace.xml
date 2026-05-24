@@ -1,41 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="050cbc21-600b-4410-aaa2-1bd4e6bd969a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="050cbc21-600b-4410-aaa2-1bd4e6bd969a" name="Changes" comment="first upload">
+      <change beforePath="$PROJECT_DIR$/.idea/OpenCart-E2E-Testing.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/account/ForgotPasswordPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/account/LoginPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/account/RegisterPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/cart/CartPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/catalog/ComparisonPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/catalog/NavigationPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/catalog/ProductPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/catalog/SearchPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/checkout/CheckoutPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/home/CurrencyDropdown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/home/HomePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/wishlist/WishlistPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/BaseTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/account/ForgotPasswordTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/account/LoginTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/account/RegisterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/cart/CartTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/catalog/ComparisonTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/catalog/NavigationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/checkout/CheckoutTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/header/CurrencyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/header/NavigationHoverTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/header/SearchTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/component/wishlist/WishlistTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/e2e/ComprehensiveE2ETest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/integration/CurrencySwitchThenVerifyProductPriceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/integration/LoginThenAddToCartThenCheckoutTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/integration/LoginThenSearchThenAddToCartTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/integration/LoginThenWishlistThenViewProductTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/integration/RegisterThenLoginTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/integration/SearchThenCompareProductsTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +20,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="3E7KNsi40lTEdOqqcEz9rHdZ9ga" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -58,7 +33,10 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -71,5 +49,20 @@
       <updated>1779524134977</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="first upload" />
   </component>
 </project>
