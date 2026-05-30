@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b89a7e4-fd43-4e75-a440-58feac71a203" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/e2e/E2ETest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/OpenCart-E2E-Testing.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api/OC-API-TEST_CAUSE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Api/OC-API-TEST_CAUSE.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api/OC-API-TEST_SUMMARY.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Api/OC-API-TEST_SUMMARY.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/ExtentReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/ExtentReport.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e2e/ComprehensiveE2ETest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OpenCart.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/e2e/ComprehensiveE2ETest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,23 +28,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TestNG.ComprehensiveE2ETest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ForgotPasswordTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.testLoginWithValidCredentials.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing/Automation&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.ComprehensiveE2ETest.executor": "Run",
+    "TestNG.CurrencySwitchThenVerifyProductPriceTest.executor": "Run",
+    "TestNG.E2ETest.executor": "Run",
+    "TestNG.ForgotPasswordTest.executor": "Run",
+    "TestNG.LoginTest.executor": "Run",
+    "TestNG.LoginTest.testLoginWithValidCredentials.executor": "Run",
+    "TestNG.RegisterThenLoginTest.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.E2ETest">
+}]]></component>
+  <component name="RunManager" selected="TestNG.RegisterThenLoginTest">
+    <configuration name="CurrencySwitchThenVerifyProductPriceTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OpenCart-Automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.CurrencySwitchThenVerifyProductPriceTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2ETest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OpenCart-Automation" />
       <extension name="coverage">
@@ -85,23 +99,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="OpenCart-Automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="component.account.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="component.account" />
-      <option name="MAIN_CLASS_NAME" value="component.account.LoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LoginTest.testLoginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OpenCart-Automation" />
       <extension name="coverage">
@@ -120,11 +117,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegisterThenLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OpenCart-Automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.RegisterThenLoginTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RegisterThenLoginTest" />
+        <item itemvalue="TestNG.CurrencySwitchThenVerifyProductPriceTest" />
+        <item itemvalue="TestNG.E2ETest" />
         <item itemvalue="TestNG.LoginTest.testLoginWithValidCredentials" />
         <item itemvalue="TestNG.ForgotPasswordTest" />
-        <item itemvalue="TestNG.LoginTest" />
       </list>
     </recent_temporary>
   </component>

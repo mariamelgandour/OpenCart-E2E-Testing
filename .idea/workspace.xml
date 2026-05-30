@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="050cbc21-600b-4410-aaa2-1bd4e6bd969a" name="Changes" comment="first upload">
-      <change beforePath="$PROJECT_DIR$/.idea/OpenCart-E2E-Testing.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/OC-API-TEST_CAUSE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Api/OC-API-TEST_CAUSE.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/OC-API-TEST_SUMMARY.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Api/OC-API-TEST_SUMMARY.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Automation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automation/Reports/ExtentReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/Automation/Reports/ExtentReport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automation/target/test-classes/e2e/ComprehensiveE2ETest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +25,7 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="3E7KNsi40lTEdOqqcEz9rHdZ9ga" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,11 +35,28 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.2",
+    "two.files.diff.last.used.folder": "C:/Users/Mohamed/IdeaProjects/OpenCart-E2E-Testing/Automation"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OpenCart-Automation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OpenCart-Automation" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
