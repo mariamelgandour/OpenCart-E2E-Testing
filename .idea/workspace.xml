@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="050cbc21-600b-4410-aaa2-1bd4e6bd969a" name="Changes" comment="first upload">
+    <list default="true" id="050cbc21-600b-4410-aaa2-1bd4e6bd969a" name="Changes" comment="upload">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/OC-DB-Bug-Report.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/OC-DB-TEST_SUMMARY.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/OC_DB_TEST_CAUSE.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/OpenCart - DB Schema.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/opencart.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manual/USER STORY/OC-Compare -User-Stories .pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manual/USER STORY/OC-LOG-User-Stories .pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manual/USER STORY/OC-REG-User-Stories.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manual/USER STORY/OC-Search-User-Stories .pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manual/USER STORY/OC-Shopping Cart - User-Stories.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manual/USER STORY/OC-Wishlist - User-Stories .pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Presentation.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +61,15 @@
       <option name="presentableId" value="Default" />
       <updated>1779524134977</updated>
     </task>
+    <task id="LOCAL-00001" summary="upload">
+      <option name="closed" value="true" />
+      <created>1781919282678</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1781919282678</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,6 +85,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="first upload" />
+    <MESSAGE value="upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload" />
   </component>
 </project>
