@@ -29,6 +29,7 @@
 ## 📑 Table of Contents
 
 - [Project Overview](#-project-overview)
+- Project Infographic
 - [Testing Layers at a Glance](#-testing-layers-at-a-glance)
 - [Test Strategy & Pyramid](#-test-strategy--pyramid)
 - [Project Structure](#-project-structure)
@@ -61,6 +62,18 @@ The project demonstrates industry-standard QA practices across **five independen
 | **API** | REST endpoint validation across the full checkout lifecycle | Postman · Newman |
 | **Performance** | Load & stress testing of the REST API checkout flow | Apache JMeter |
 
+---
+## 📊 Project Infographic
+
+Before diving into the project details, the infographic below provides a concise visual overview of the complete QA solution, including the testing layers, architecture, technology stack, workflow, deliverables, and implementation roadmap.
+
+<p align="center">
+  <img src="Documentation/OpenCart_E2E_Testing_Infographic.png"
+       alt="OpenCart E2E Testing Project Infographic"
+       width="100%">
+</p>
+
+> 💡 **Quick Overview:** A presentation-style roadmap summarizing the project's objectives, testing strategy, architecture, technology stack, development workflow, and key deliverables in a single visual.
 ---
 
 ## 🧪 Testing Layers at a Glance
