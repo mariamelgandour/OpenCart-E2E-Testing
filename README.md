@@ -67,11 +67,11 @@ The project demonstrates industry-standard QA practices across **five independen
 
 Before diving into the project details, the infographic below provides a concise visual overview of the complete QA solution, including the testing layers, architecture, technology stack, workflow, deliverables, and implementation roadmap.
 
-<p align="center">
+<!-- <p align="center">
   <img src="Documentation/OpenCart_E2E_Testing_Infographic.png"
        alt="OpenCart E2E Testing Project Infographic"
        width="100%">
-</p>
+</p> -->
 
 > 💡 **Quick Overview:** A presentation-style roadmap summarizing the project's objectives, testing strategy, architecture, technology stack, development workflow, and key deliverables in a single visual.
 ---
