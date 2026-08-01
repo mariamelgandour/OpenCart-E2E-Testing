@@ -29,7 +29,7 @@
 ## 📑 Table of Contents
 
 - [Project Overview](#-project-overview)
-- Project Infographic
+- [Project Infographic](#-project-infographic)
 - [Testing Layers at a Glance](#-testing-layers-at-a-glance)
 - [Test Strategy & Pyramid](#-test-strategy--pyramid)
 - [Project Structure](#-project-structure)
